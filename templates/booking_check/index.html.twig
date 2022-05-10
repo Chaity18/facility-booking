@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Booking Task!{% endblock %}
+
+{% block body %}
+{% for booking in bookings %}
+    <h3>User Id : {{ booking.id }}</h3>
+    <p>service : {{ booking.service }}</p>
+    <p>start Time: {{ booking.startTime }}</p>
+    <p>End Time : {{ booking.endTime }}</p>
+    <p>charges: {{ booking.total }}</p>
+    <p>status: {% if booking.booked %} Booked {% else %} Already Booked {% endif %} </p>
+    <hr>
+{% endfor %}
+{% endblock %}
